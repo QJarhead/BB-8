@@ -1,0 +1,23 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.cisco.com/ast/soap">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <soap:selectCmDevice>
+      <soap:StateInfo></soap:StateInfo>
+      <soap:CmSelectionCriteria>
+        <soap:MaxReturnedDevices>100</soap:MaxReturnedDevices>
+        <soap:DeviceClass>Any</soap:DeviceClass>
+        <soap:Model></soap:Model>
+        <soap:Status>Any</soap:Status>
+        <soap:NodeName></soap:NodeName>
+        <soap:SelectBy>DirNumber</soap:SelectBy>
+        <soap:SelectItems>
+          <soap:item>
+            <soap:Item>BB8_DirectoryNumber</soap:Item>
+          </soap:item>
+        </soap:SelectItems>
+        <soap:Protocol>Any</soap:Protocol>
+        <soap:DownloadStatus>Any</soap:DownloadStatus>
+      </soap:CmSelectionCriteria>
+    </soap:selectCmDevice>
+  </soapenv:Body>
+</soapenv:Envelope>

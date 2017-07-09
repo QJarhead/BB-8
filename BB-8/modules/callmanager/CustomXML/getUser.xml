@@ -1,0 +1,57 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.cisco.com/AXL/API/11.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:listUser sequence="">
+         <searchCriteria>
+            <userid>BB8_UserId</userid>
+           <firstName>BB8_firstname</firstName>
+           <lastName>BB8_lastName</lastName>
+         </searchCriteria>
+         <returnedTags uuid="">
+            <firstName></firstName>
+            <displayName></displayName>
+            <middleName></middleName>
+            <lastName></lastName>
+            <userid></userid>
+            <mailid></mailid>
+            <department></department>
+            <manager></manager>
+            <userLocale></userLocale>
+            <primaryExtension>
+                  <pattern></pattern>
+                  <routePartitionName></routePartitionName>
+            </primaryExtension>
+            <associatedPc></associatedPc>
+            <enableCti></enableCti>
+            <presenceGroupName uuid=""></presenceGroupName>
+            <subscribeCallingSearchSpaceName uuid=""></subscribeCallingSearchSpaceName>
+            <enableMobility></enableMobility>
+            <enableMobileVoiceAccess></enableMobileVoiceAccess>
+            <maxDeskPickupWaitTime></maxDeskPickupWaitTime>
+            <remoteDestinationLimit></remoteDestinationLimit>
+            <status></status>
+            <enableEmcc></enableEmcc>
+            <patternPrecedence></patternPrecedence>
+            <numericUserId></numericUserId>
+            <mlppPassword></mlppPassword>
+            <homeCluster></homeCluster>
+            <imAndPresenceEnable></imAndPresenceEnable>
+            <serviceProfile uuid=""></serviceProfile>
+            <directoryUri></directoryUri>
+            <telephoneNumber></telephoneNumber>
+            <title></title>
+            <mobileNumber></mobileNumber>
+            <homeNumber></homeNumber>
+            <pagerNumber></pagerNumber>
+            <selfService></selfService>
+            <calendarPresence></calendarPresence>
+            <ldapDirectoryName uuid=""></ldapDirectoryName>
+            <userIdentity></userIdentity>
+            <accountType></accountType>
+            <authenticationType></authenticationType>
+            <enableUserToHostConferenceNow></enableUserToHostConferenceNow>
+            <attendeesAccessCode></attendeesAccessCode>
+         </returnedTags>
+      </ns:listUser>
+   </soapenv:Body>
+</soapenv:Envelope>

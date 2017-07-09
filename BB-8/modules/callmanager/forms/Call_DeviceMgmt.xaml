@@ -1,0 +1,44 @@
+﻿<Window x:Name="BB_8_CallDeviceMgmt_InitWindow" x:Class="BB_8.Call_DeviceMgmt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BB_8"
+        mc:Ignorable="d"
+        Title="Window1" Height="518.35" Width="1222.964">
+    <Grid x:Name="BB_8_CallDeviceMgmt_InitGrid" Margin="0,10" Grid.Row="1">
+        <Grid x:Name="Network_Callmanager_DeviceMgmt_Grid" Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" MaxHeight="150" MinHeight="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="Network_Callmanager_DeviceMgmt_Filter_Grid">
+                <Rectangle x:Name="Network_Callmanager_DeviceMgmt_Filter_Rectangle" Fill="#FFF4F4F5" Stroke="Black"/>
+                <Label Content="Filter" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="Network_Callmanager_DeviceMgmt_Filter_Text" HorizontalAlignment="Left" Height="23" Margin="268,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" KeyDown="Network_Callmanager_DeviceMgmt_Filter_Text_KeyDown"/>
+                <Button x:Name="Network_Callmanager_DeviceMgmt_Filter_SearchIP" Content="Search Phones" HorizontalAlignment="Left" Margin="393,31,0,0" VerticalAlignment="Top" Height="23" Click="Network_Callmanager_DeviceMgmt_Filter_SearchIP_Click"/>
+                <ComboBox x:Name="Network_Callmanager_DeviceMgmt_Filter_Choice" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="128" Height="23" SelectedIndex="0">
+                    <ComboBoxItem Content="Directory Number" HorizontalAlignment="Left" Width="175"/>
+                    <ComboBoxItem Content="Vorname" HorizontalAlignment="Left" Width="175"/>
+                    <ComboBoxItem Content="Nachname" HorizontalAlignment="Left" Width="175"/>
+                </ComboBox>
+                <ComboBox x:Name="Network_Callmanager_DeviceMgmt_Filter_State" HorizontalAlignment="Left" Margin="143,31,0,0" VerticalAlignment="Top" Width="120" Height="23" SelectedIndex="0">
+                    <ComboBoxItem Content="Enthält" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Beginnt" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Endet" HorizontalAlignment="Left" Width="118"/>
+                </ComboBox>
+            </Grid>
+            <WebBrowser x:Name="Network_Callmanager_DeviceMgmt_Filter_ShowScreen" Height="275" Margin="0,11,1,0" Width="425" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" LoadCompleted="Network_Callmanager_DeviceMgmt_Filter_ShowScreen_LoadCompleted"/>
+            <Button x:Name="Network_Callmanager_DeviceMgmt_Filter_ShowScreen_Close" Content="X" HorizontalAlignment="Right" Margin="0,11,426,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Click="Network_Callmanager_DeviceMgmt_Filter_ShowScreen_Close_Click"/>
+            <DataGrid x:Name="Network_Callmanager_DeviceMgmt_Output_Data" Margin="0,11,450,10" Grid.Row="1" MouseDoubleClick="Network_Callmanager_DeviceMgmt_Output_Data_MouseDoubleClick" IsReadOnly="True">
+                <DataGrid.ContextMenu>
+                    <ContextMenu Name="cm" StaysOpen="true">
+                        <MenuItem x:Name="Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ShowScreenshot" Header="Show Screenshot" Click="Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ShowScreenshot_Click"/>
+                        <MenuItem Header="Login User"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </Grid>
+
+    </Grid>
+</Window>
