@@ -15,7 +15,7 @@ namespace BB_8
     {
         ///     Description:            Klasse für XML verbindung zum Callmanager, gibt die IP-Adresse einer angegebenen Rufnummer zurück
         ///     Namespace:              BB_8
-        ///     Class:                  getPhoneIP
+        ///     Class:                  getPhone
         ///     Author:                 Tim Christoph Lid                    
         ///     Date-Init:              25.06.2017
         ///     Date-LastChange         25.08.2017
