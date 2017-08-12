@@ -27,17 +27,16 @@
                 <Button x:Name="Network_Callmanager_Report_Filter_Add" Content="+" HorizontalAlignment="Left" Margin="764,36,0,0" VerticalAlignment="Top" Height="23" Width="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Network_Callmanager_Report_Filter_Add_Click"/>
                 <Button x:Name="Network_Callmanager_Report_Filter_Delete" Content="-" HorizontalAlignment="Left" Margin="792,36,0,0" VerticalAlignment="Top" Width="23" Height="23" Click="Network_Callmanager_Report_Filter_Delete_Click" IsEnabled="False"/>
                 <Button x:Name="Network_Callmanager_Report_Filter_Search" Content="Search" HorizontalAlignment="Left" Margin="684,36,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Network_Callmanager_Report_Filter_Search_Click"/>
-                <ListBox x:Name="Network_Callmanager_Report_Filter_Available" HorizontalAlignment="Left" Height="130" Margin="840,10,0,0" VerticalAlignment="Top" Width="150" MouseDoubleClick="Network_Callmanager_Report_Filter_Available_MouseDoubleClick"/>
-                <ListBox x:Name="Network_Callmanager_Report_Filter_Display" HorizontalAlignment="Left" Height="130" Margin="1020,10,0,0" VerticalAlignment="Top" Width="150" MouseDoubleClick="Network_Callmanager_Report_Filter_Display_MouseDoubleClick"/>
-                <Button x:Name="Network_Callmanager_Report_Filter_Add_Display" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="995,42,0,0" VerticalAlignment="Top" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Network_Callmanager_Report_Filter_Add_Display_Click"/>
-                <Button x:Name="Network_Callmanager_Report_Filter_Delete_Display" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="995,78,0,0" VerticalAlignment="Top" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Network_Callmanager_Report_Filter_Delete_Display_Click_1"/>
+                <ListBox x:Name="Network_Callmanager_Report_Filter_Available" HorizontalAlignment="Right" Height="130" Margin="0,10,190,0" VerticalAlignment="Top" Width="150" MouseDoubleClick="Network_Callmanager_Report_Filter_Available_MouseDoubleClick"/>
+                <ListBox x:Name="Network_Callmanager_Report_Filter_Display" HorizontalAlignment="Right" Height="130" Margin="1020,10,10,0" VerticalAlignment="Top" Width="150" MouseDoubleClick="Network_Callmanager_Report_Filter_Display_MouseDoubleClick"/>
+                <Button x:Name="Network_Callmanager_Report_Filter_Add_Display" Content="&gt;&gt;" HorizontalAlignment="Right" Margin="0,42,165,0" VerticalAlignment="Top" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Network_Callmanager_Report_Filter_Add_Display_Click"/>
+                <Button x:Name="Network_Callmanager_Report_Filter_Delete_Display" Content="&lt;&lt;" HorizontalAlignment="Right" Margin="0,68,165,0" VerticalAlignment="Top" Width="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="Network_Callmanager_Report_Filter_Delete_Display_Click_1"/>
+                <Label Content="Callmanager Call-Report" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" FontSize="20"/>
             </Grid>
             <TextBox x:Name="Network_Callmanager_Report_Output" Margin="0,10,0,40" Grid.Row="1" TextWrapping="Wrap"/>
             <Button x:Name="Network_Callmanager_Report_Output_Save" Content="Save Output" HorizontalAlignment="Left" Margin="0,99,0,10" Grid.Row="1" VerticalAlignment="Bottom" Width="88" Click="Network_Callmanager_Report_Output_Save_Click"/>
             <Button x:Name="Network_Callmanager_Report_Output_Clear" Content="Clear Output" HorizontalAlignment="Left" Margin="93,99,0,10" Grid.Row="1" VerticalAlignment="Bottom" Width="88" Click="Network_Callmanager_Report_Output_Clear_Click"/>
         </Grid>
-        <Rectangle Fill="#FFF4F4F5" Margin="0,0,0,-12" Stroke="Black"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="217,155,0,0" TextWrapping="Wrap" Text="Under Construction" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

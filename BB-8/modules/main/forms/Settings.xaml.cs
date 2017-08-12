@@ -33,6 +33,8 @@ namespace BB_8
         {
             ///this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            SetAllVisible();
+            Properties_Callmanager_Grid.Visibility = Visibility.Visible;
             ReadProperties();
         }
 
@@ -42,8 +44,18 @@ namespace BB_8
         private void ReadProperties()
         {
             Properties_Callmanager_IPAddress.Text = Properties.Settings.Default.CallmanagerIPAddress;
-            Properties_Callmanager_Username.Text = Properties.Settings.Default.CallmanagerUsername;
-            Properties_Callmanager_Password.Password = Properties.Settings.Default.CallmanagerPassword;
+            Properties_Callmanager_UCUsername.Text = Properties.Settings.Default.CallmanagerUCUsername;
+            Properties_Callmanager_UCPassword.Password = Properties.Settings.Default.CallmanagerUCPassword;
+            Properties_Callmanager_OSUsername.Text = Properties.Settings.Default.CallmanagerOSUsername;
+            Properties_Callmanager_OSPassword.Password = Properties.Settings.Default.CallmanagerOSPassword;
+            Properties_IPPhone_Username.Text = Properties.Settings.Default.IPPhoneUsername;
+            Properties_IPPhone_Password.Password = Properties.Settings.Default.IPPhonePassword;
+            Properties_netTerrain_DBSource.Text = Properties.Settings.Default.netTerrainDatabaseIPAddress;
+            Properties_netTerrain_DBName.Text = Properties.Settings.Default.netTerrainDatabaseName;
+            Properties_netTerrain_DBUsername.Text = Properties.Settings.Default.netTerrainDatabaseUser;
+            Properties_netTerrain_DBPassword.Password = Properties.Settings.Default.netTerrainDatabasePassword;
+            Properties_netTerrain_Password.Password = Properties.Settings.Default.netTerrainPassword;
+            Properties_netTerrain_Username.Text = Properties.Settings.Default.netTerrainUsername;
         }
 
         /// <summary>
@@ -52,8 +64,18 @@ namespace BB_8
         private void WriteProperties()
         {
             Properties.Settings.Default.CallmanagerIPAddress = Properties_Callmanager_IPAddress.Text;
-            Properties.Settings.Default.CallmanagerUsername = Properties_Callmanager_Username.Text;
-            Properties.Settings.Default.CallmanagerPassword = Properties_Callmanager_Password.Password;
+            Properties.Settings.Default.CallmanagerUCUsername = Properties_Callmanager_UCUsername.Text;
+            Properties.Settings.Default.CallmanagerUCPassword = Properties_Callmanager_UCPassword.Password;
+            Properties.Settings.Default.CallmanagerOSUsername = Properties_Callmanager_OSUsername.Text;
+            Properties.Settings.Default.CallmanagerOSPassword = Properties_Callmanager_OSPassword.Password;
+            Properties.Settings.Default.IPPhoneUsername = Properties_IPPhone_Username.Text;
+            Properties.Settings.Default.IPPhonePassword = Properties_IPPhone_Password.Password;
+            Properties.Settings.Default.netTerrainDatabaseIPAddress = Properties_netTerrain_DBSource.Text;
+            Properties.Settings.Default.netTerrainDatabaseName = Properties_netTerrain_DBName.Text;
+            Properties.Settings.Default.netTerrainDatabaseUser = Properties_netTerrain_DBUsername.Text;
+            Properties.Settings.Default.netTerrainDatabasePassword = Properties_netTerrain_DBPassword.Password;
+            Properties.Settings.Default.netTerrainUsername = Properties_netTerrain_Username.Text;
+            Properties.Settings.Default.netTerrainPassword = Properties_netTerrain_Password.Password;
             Properties.Settings.Default.Save();
         }
 
@@ -65,6 +87,7 @@ namespace BB_8
             Properties_Callmanager_Grid.Visibility = Visibility.Hidden;
             Properties_IPPhones_Grid.Visibility = Visibility.Hidden;
             Properties_Layout_Grid.Visibility = Visibility.Hidden;
+            Properties_netTerrain_Grid.Visibility = Visibility.Hidden;
         }
 
         /// <summary>
@@ -108,6 +131,12 @@ namespace BB_8
         private void Properties_Submit_Click(object sender, RoutedEventArgs e)
         {
             WriteProperties();
+        }
+
+        private void Properties_netTerrain_TreeView_Selected(object sender, RoutedEventArgs e)
+        {
+            SetAllVisible();
+            Properties_netTerrain_Grid.Visibility = Visibility.Visible;
         }
     }
 }

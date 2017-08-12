@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+  <xs:complexType name="FileUploadAttributes">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="FileByteStream" nillable="true" type="q1:Stream" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileUploadAttributes" nillable="true" type="tns:FileUploadAttributes" />
+  <xs:simpleType name="TextAligns">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Center" />
+      <xs:enumeration value="Right" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TextAligns" nillable="true" type="tns:TextAligns" />
+  <xs:simpleType name="FontFamilies">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Arial" />
+      <xs:enumeration value="ArialBlack" />
+      <xs:enumeration value="ComicSansMS" />
+      <xs:enumeration value="CourierNew" />
+      <xs:enumeration value="Georgia" />
+      <xs:enumeration value="PalatinoLinotype" />
+      <xs:enumeration value="Tahoma" />
+      <xs:enumeration value="TimesNewRoman" />
+      <xs:enumeration value="TrebuchetMS" />
+      <xs:enumeration value="LucidaSansUnicode" />
+      <xs:enumeration value="LucidaConsole" />
+      <xs:enumeration value="MSSerif" />
+      <xs:enumeration value="Verdana" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FontFamilies" nillable="true" type="tns:FontFamilies" />
+  <xs:simpleType name="HierarchySearchModes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DiagramOnly" />
+      <xs:enumeration value="N_Levels" />
+      <xs:enumeration value="Full" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HierarchySearchModes" nillable="true" type="tns:HierarchySearchModes" />
+  <xs:simpleType name="InstanceEffects">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoEffect" />
+      <xs:enumeration value="BlinkObject" />
+      <xs:enumeration value="RectangleBlink" />
+      <xs:enumeration value="RedTriangleIndicator" />
+      <xs:enumeration value="OrangeTriangleIndicator" />
+      <xs:enumeration value="GreenTriangleIndicator" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InstanceEffects" nillable="true" type="tns:InstanceEffects" />
+  <xs:simpleType name="LinkStyles">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Solid" />
+      <xs:enumeration value="Dash" />
+      <xs:enumeration value="DashDot" />
+      <xs:enumeration value="DashDotDot" />
+      <xs:enumeration value="Dot" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LinkStyles" nillable="true" type="tns:LinkStyles" />
+  <xs:simpleType name="NodeTypeGroups">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Node" />
+      <xs:enumeration value="Document" />
+      <xs:enumeration value="Comment" />
+      <xs:enumeration value="Stamp" />
+      <xs:enumeration value="Shape" />
+      <xs:enumeration value="Picture" />
+      <xs:enumeration value="Device" />
+      <xs:enumeration value="Rack" />
+      <xs:enumeration value="Port" />
+      <xs:enumeration value="Slot" />
+      <xs:enumeration value="Card" />
+      <xs:enumeration value="LineNode" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NodeTypeGroups" nillable="true" type="tns:NodeTypeGroups" />
+  <xs:simpleType name="OverrideRules">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="GreaterThan" />
+      <xs:enumeration value="LowerThan" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OverrideRules" nillable="true" type="tns:OverrideRules" />
+  <xs:simpleType name="Roles">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoAccess" />
+      <xs:enumeration value="ReadOnly" />
+      <xs:enumeration value="DiagramReadOnly" />
+      <xs:enumeration value="Annotator" />
+      <xs:enumeration value="Updater" />
+      <xs:enumeration value="Editor" />
+      <xs:enumeration value="PowerUser" />
+      <xs:enumeration value="Admin" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Roles" nillable="true" type="tns:Roles" />
+  <xs:simpleType name="UpwardsPropagations">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoPropagations" />
+      <xs:enumeration value="ParentOnly" />
+      <xs:enumeration value="ParentAndGrandparentOnly" />
+      <xs:enumeration value="TopLevelOnly" />
+      <xs:enumeration value="AllLevels" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UpwardsPropagations" nillable="true" type="tns:UpwardsPropagations" />
+  <xs:simpleType name="ArrowStyles">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Plain" />
+      <xs:enumeration value="Reversed" />
+      <xs:enumeration value="Solid" />
+      <xs:enumeration value="SolidReversed" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="OpenReversed" />
+      <xs:enumeration value="Triangle" />
+      <xs:enumeration value="TriangleReversed" />
+      <xs:enumeration value="TriangleSolid" />
+      <xs:enumeration value="TriangleSolidReversed" />
+      <xs:enumeration value="Diamond" />
+      <xs:enumeration value="DiamondSolid" />
+      <xs:enumeration value="Square" />
+      <xs:enumeration value="SquareSolid" />
+      <xs:enumeration value="Circle" />
+      <xs:enumeration value="CircleSolid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ArrowStyles" nillable="true" type="tns:ArrowStyles" />
+  <xs:complexType name="NewNodeTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultHeight" type="xs:float" />
+      <xs:element minOccurs="0" name="DefaultWidth" type="xs:float" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="ImageByteStream" nillable="true" type="q2:Stream" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFavourite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeGroupNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewNodeTypeInfo" nillable="true" type="tns:NewNodeTypeInfo" />
+  <xs:simpleType name="DoubleClickBehaviors">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DrillDown" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="GoToDiagram" />
+      <xs:enumeration value="OpenURL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DoubleClickBehaviors" nillable="true" type="tns:DoubleClickBehaviors" />
+  <xs:complexType name="FaultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FaultInfo" nillable="true" type="tns:FaultInfo" />
+  <xs:complexType name="NodeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Background" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:long" />
+      <xs:element minOccurs="0" name="DefaultHeight" type="xs:float" />
+      <xs:element minOccurs="0" name="DefaultWidth" type="xs:float" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayRackLines" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DoubleClickBehavior" type="tns:DoubleClickBehaviors" />
+      <xs:element minOccurs="0" name="DoubleClickBehaviorAttribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HBLabelId" type="xs:long" />
+      <xs:element minOccurs="0" name="Height" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFavorite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KeepAspectRatio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateId" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeGroup" type="tns:NodeTypeGroups" />
+      <xs:element minOccurs="0" name="VendorId" type="xs:long" />
+      <xs:element minOccurs="0" name="Width" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeType" nillable="true" type="tns:NodeType" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupId" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsAdAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOverrideAdGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" type="tns:Roles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:complexType name="Slot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" type="xs:int" />
+      <xs:element minOccurs="0" name="Height" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="Width" type="xs:float" />
+      <xs:element minOccurs="0" name="X" type="xs:float" />
+      <xs:element minOccurs="0" name="Y" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Slot" nillable="true" type="tns:Slot" />
+  <xs:complexType name="RackContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Capacity" type="xs:int" />
+      <xs:element minOccurs="0" name="Height" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhysicalHeight" type="xs:float" />
+      <xs:element minOccurs="0" name="PhysicalWidth" type="xs:float" />
+      <xs:element minOccurs="0" name="RackTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="Width" type="xs:float" />
+      <xs:element minOccurs="0" name="X" type="xs:float" />
+      <xs:element minOccurs="0" name="Y" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RackContainer" nillable="true" type="tns:RackContainer" />
+  <xs:complexType name="Node">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DoubleClickBehavior" type="tns:DoubleClickBehaviors" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="InsertUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="MasterId" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentDiagramId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Node" nillable="true" type="tns:Node" />
+  <xs:complexType name="Device">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseNode" nillable="true" type="tns:Node" />
+      <xs:element minOccurs="0" name="ContainerId" type="xs:long" />
+      <xs:element minOccurs="0" name="RackId" type="xs:long" />
+      <xs:element minOccurs="0" name="RackPosition" type="xs:float" />
+      <xs:element minOccurs="0" name="RackUnits" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Device" nillable="true" type="tns:Device" />
+  <xs:complexType name="Rack">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseNode" nillable="true" type="tns:Node" />
+      <xs:element minOccurs="0" name="DisplayRackLines" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rack" nillable="true" type="tns:Rack" />
+  <xs:complexType name="VisNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" type="xs:int" />
+      <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanMove" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanResize" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanRotate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DiagramId" type="xs:long" />
+      <xs:element minOccurs="0" name="Height" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageOverride" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsHidden" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KeepAspectRatio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NodeId" type="xs:long" />
+      <xs:element minOccurs="0" name="Width" type="xs:float" />
+      <xs:element minOccurs="0" name="X" type="xs:float" />
+      <xs:element minOccurs="0" name="Y" type="xs:float" />
+      <xs:element minOccurs="0" name="ZOrder" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisNode" nillable="true" type="tns:VisNode" />
+  <xs:complexType name="Port">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="PortLayout" nillable="true" type="tns:PortLayout" />
+      <xs:element minOccurs="0" name="ReferencePortLayout" nillable="true" type="tns:PortLayout" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Port" nillable="true" type="tns:Port" />
+  <xs:complexType name="PortLayout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" type="xs:int" />
+      <xs:element minOccurs="0" name="Height" type="xs:float" />
+      <xs:element minOccurs="0" name="Width" type="xs:float" />
+      <xs:element minOccurs="0" name="X" type="xs:float" />
+      <xs:element minOccurs="0" name="Y" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortLayout" nillable="true" type="tns:PortLayout" />
+  <xs:complexType name="LinkTypeProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" type="xs:int" />
+      <xs:element minOccurs="0" name="Bold" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Displayed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FillColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontFamily" type="tns:FontFamilies" />
+      <xs:element minOccurs="0" name="FontSize" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsInProperties" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTypeField" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUniqueForAllTypes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUniqueForThisType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Italic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Justification" type="tns:TextJustification" />
+      <xs:element minOccurs="0" name="LinkTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="LockList" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OffsetX" type="xs:float" />
+      <xs:element minOccurs="0" name="OffsetY" type="xs:float" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="TextAlign" type="tns:TextAligns" />
+      <xs:element minOccurs="0" name="Underline" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkTypeProperty" nillable="true" type="tns:LinkTypeProperty" />
+  <xs:simpleType name="TextJustification">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TopLeft" />
+      <xs:enumeration value="Center" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TextJustification" nillable="true" type="tns:TextJustification" />
+  <xs:complexType name="LinkType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:long" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndArrow" type="tns:ArrowStyles" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFavorite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMatchingPortConnectors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSnappedToEdge" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LinkStyle" type="tns:LinkStyles" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartArrow" type="tns:ArrowStyles" />
+      <xs:element minOccurs="0" name="Thickness" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkType" nillable="true" type="tns:LinkType" />
+  <xs:complexType name="LinkOverride">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndArrow" type="tns:ArrowStyles" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsOverride" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LinkStyle" type="tns:LinkStyles" />
+      <xs:element minOccurs="0" name="ListValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyId" type="xs:long" />
+      <xs:element minOccurs="0" name="Rule" type="tns:OverrideRules" />
+      <xs:element minOccurs="0" name="StartArrow" type="tns:ArrowStyles" />
+      <xs:element minOccurs="0" name="Thickness" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkOverride" nillable="true" type="tns:LinkOverride" />
+  <xs:complexType name="LinkCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFavorite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkCategory" nillable="true" type="tns:LinkCategory" />
+  <xs:complexType name="NodeOverride">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstanceEffect" type="tns:InstanceEffects" />
+      <xs:element minOccurs="0" name="IsOverride" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentEffect" type="tns:InstanceEffects" />
+      <xs:element minOccurs="0" name="PropertyId" type="xs:long" />
+      <xs:element minOccurs="0" name="Rule" type="tns:OverrideRules" />
+      <xs:element minOccurs="0" name="UpwardsPropagation" type="tns:UpwardsPropagations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeOverride" nillable="true" type="tns:NodeOverride" />
+  <xs:complexType name="NodeTypeProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" type="xs:int" />
+      <xs:element minOccurs="0" name="Bold" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Displayed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FillColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontFamily" type="tns:FontFamilies" />
+      <xs:element minOccurs="0" name="FontSize" type="xs:float" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsInProperties" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTypeField" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUniqueForAllTypes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUniqueForThisType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Italic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Justification" type="tns:TextJustification" />
+      <xs:element minOccurs="0" name="LockList" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="NotEditable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OffsetX" type="xs:float" />
+      <xs:element minOccurs="0" name="OffsetY" type="xs:float" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="TextAlign" type="tns:TextAligns" />
+      <xs:element minOccurs="0" name="Underline" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeTypeProperty" nillable="true" type="tns:NodeTypeProperty" />
+  <xs:complexType name="Vendor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vendor" nillable="true" type="tns:Vendor" />
+  <xs:complexType name="NodeCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFavorite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeGroup" type="tns:NodeTypeGroups" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeCategory" nillable="true" type="tns:NodeCategory" />
+</xs:schema>

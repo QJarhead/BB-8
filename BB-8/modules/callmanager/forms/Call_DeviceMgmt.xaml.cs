@@ -31,6 +31,7 @@ namespace BB_8
     ///     Tim Christoph Lid       25.05.2017      Hinzufügen des Screenhots vom Telefon
     ///     Tim Christoph Lid       26.06.2017      Umgestellt, nun DirectoryNumber; DeviceName und IP-Adresse in der anzeige
     ///     Tim Christoph Lid       09.07.2017      Umbenennen der Methoden (großbuchstaben)
+    ///     Tim Christoph Lid       28.07.2017      Erweitern des Contextmenüs um "Call-Control Phone" jetzt kann mit der rechten Maustaste das Telefon gesteuert werden
     ///     
     public partial class Call_DeviceMgmt : Window
     {
@@ -85,7 +86,7 @@ namespace BB_8
         /// <param name="ipAdress"></param>
         private void ShowScreenshot(String ipAdress)
         {
-            string authHdr = "Authorization: Basic " + Convert.ToBase64String(Encoding.ASCII.GetBytes("BB-8:mSMHaEfyI6PGYG0XCltD")) + "\r\n";
+            string authHdr = "Authorization: Basic " + Convert.ToBase64String(Encoding.ASCII.GetBytes(Properties.Settings.Default.IPPhoneUsername + ":" + Properties.Settings.Default.IPPhonePassword)) + "\r\n";
             Network_Callmanager_DeviceMgmt_Filter_ShowScreen.Navigate("http://" + ipAdress + "/CGI/Screenshot", null, null, authHdr);
         }
 
@@ -240,6 +241,15 @@ namespace BB_8
             }
 
             ShowScreenshot(IPAdress);
+        }
+
+        private void Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ControlPhone_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (DataGrid_Device_Entry row in Network_Callmanager_DeviceMgmt_Output_Data.SelectedItems)
+            {
+                IPAdress = row.IPAddress;
+            }
+            beeBeeAte.Network_Callmanager_Show_ControlPhone(IPAdress);
         }
     }
 }

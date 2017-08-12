@@ -1,0 +1,1821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/Message" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="FileUploadAttributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/Message" name="FileByteStream" type="q1:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FileName" nillable="true" type="xs:string" />
+  <xs:element name="ObjectId" type="xs:long" />
+  <xs:element name="CatalogNodeTypeDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeTypeGetResult" nillable="true" type="q2:NodeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeTypeGetByNameResult" nillable="true" type="q3:NodeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeTypeGetId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeTypeGetIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NodeTypeGetIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="nodeType" nillable="true" type="q4:NodeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetHeight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetHeightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DiagramGetHeightResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetLinksByTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="includeSubDiagrams" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetLinksByTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiagramGetLinksByTypeIdResult" nillable="true" type="q5:ArrayOfKeyValueOflongstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetNodesByTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="searchMode" type="q6:HierarchySearchModes" />
+        <xs:element minOccurs="0" name="searchDepth" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetNodesByTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiagramGetNodesByTypeIdResult" nillable="true" type="q7:ArrayOfKeyValueOflongstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetNodesByTypeGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="typeGroup" type="q8:NodeTypeGroups" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="searchMode" type="q9:HierarchySearchModes" />
+        <xs:element minOccurs="0" name="searchDepth" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetNodesByTypeGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiagramGetNodesByTypeGroupResult" nillable="true" type="q10:ArrayOfKeyValueOflongstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetMarginSize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetMarginSizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DiagramGetMarginSizeResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetWidth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramGetWidthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DiagramGetWidthResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InstanceMoveToFront">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="instanceId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InstanceMoveToFrontResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InstanceSendToBack">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="instanceId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InstanceSendToBackResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isAdAccount" type="xs:boolean" />
+        <xs:element minOccurs="0" name="overrideAdGroup" type="xs:boolean" />
+        <xs:element minOccurs="0" name="groupId" type="xs:long" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comments" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminUserAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="AdminUserGetResult" nillable="true" type="q11:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="AdminUserGetByNameResult" nillable="true" type="q12:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserSetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserSetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="user" nillable="true" type="q13:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminUserUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="role" type="q14:Roles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdminGroupAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="groupId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="groupId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="AdminGroupGetResult" nillable="true" type="q15:Group" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="AdminGroupGetByNameResult" nillable="true" type="q16:Group" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="group" nillable="true" type="q17:Group" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminGroupUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnection">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestConnectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkGetPropertyValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkId" type="xs:long" />
+        <xs:element minOccurs="0" name="linkPropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkGetPropertyValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkGetPropertyValueResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkGetPropertyValueByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkId" type="xs:long" />
+        <xs:element minOccurs="0" name="linkPropertyName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkGetPropertyValueByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkGetPropertyValueByNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkGetTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkGetTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkGetTypeIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="typeId" type="xs:long" />
+        <xs:element minOccurs="0" name="node1Id" type="xs:long" />
+        <xs:element minOccurs="0" name="node2Id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkInsertResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkPropertyUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkId" type="xs:long" />
+        <xs:element minOccurs="0" name="propertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkPropertyUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetPropertyValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodePropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetPropertyValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NodeGetPropertyValueResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetPropertyValueByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodePropertyName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetPropertyValueByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NodeGetPropertyValueByNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NodeGetTypeIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetTypeGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeGetTypeGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="NodeGetTypeGroupResult" type="q18:NodeTypeGroups" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentId" type="xs:long" />
+        <xs:element minOccurs="0" name="typeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NodeInsertResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodePropertyUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="propertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodePropertyUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeReparent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="newParentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeReparentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetCanMove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="canMove" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetCanMoveResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetHeight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="height" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetHeightResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetWidth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="width" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetWidthResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="x" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetXResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element minOccurs="0" name="y" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodeSetYResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodesGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NodesGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NodesGetByNameResult" nillable="true" type="q19:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VisNodeSetAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="attributes" nillable="true" type="q20:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VisNodeSetAttributeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatabaseValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="table" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="columnName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="columnValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="resultColumnName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatabaseValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatabaseValuesResult" nillable="true" type="q21:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="slotName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogSlotAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogSlotGetResult" nillable="true" type="q22:Slot" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotsGetByNodeTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotsGetByNodeTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogSlotsGetByNodeTypeIdResult" nillable="true" type="q23:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="slot" nillable="true" type="q24:Slot" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotMapCardType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:long" />
+        <xs:element minOccurs="0" name="cardTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotMapCardTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotUnmapCardType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:long" />
+        <xs:element minOccurs="0" name="cardTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotUnmapCardTypeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotGetMappedCardTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="slotId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotGetMappedCardTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogSlotGetMappedCardTypesResult" nillable="true" type="q25:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotsGetAllWithMappedCardType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cardTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogSlotsGetAllWithMappedCardTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogSlotsGetAllWithMappedCardTypeResult" nillable="true" type="q26:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rackTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="rackContainerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogRackContainerAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rackContainerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rackContainerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogRackContainerGetResult" nillable="true" type="q27:RackContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainersGetByRackTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rackTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainersGetByRackTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogRackContainersGetByRackTypeIdResult" nillable="true" type="q28:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="rackContainer" nillable="true" type="q29:RackContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogRackContainerUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramNodeGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramNodeGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="DiagramNodeGetResult" nillable="true" type="q30:Node" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramDeviceGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deviceId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramDeviceGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="DiagramDeviceGetResult" nillable="true" type="q31:Device" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramRackGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rackId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramRackGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="DiagramRackGetResult" nillable="true" type="q32:Rack" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramVisNodeGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="visNodeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramVisNodeGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="DiagramVisNodeGetResult" nillable="true" type="q33:VisNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramVisNodeGetByDiagramAndNodeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="diagramId" type="xs:long" />
+        <xs:element minOccurs="0" name="nodeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramVisNodeGetByDiagramAndNodeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="DiagramVisNodeGetByDiagramAndNodeIdResult" nillable="true" type="q34:VisNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramVisNodeUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="visNode" nillable="true" type="q35:VisNode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DiagramVisNodeUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="portName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogPortAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="portId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="portId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogPortGetResult" nillable="true" type="q36:Port" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortsGetByNodeTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortsGetByNodeTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogPortsGetByNodeTypeIdResult" nillable="true" type="q37:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="port" nillable="true" type="q38:Port" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogPortUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogAddLinkTypeProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="propertyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isMandatory" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isDisplayed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isInProperties" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogAddLinkTypePropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogAddLinkTypePropertyResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="propertyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isMandatory" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isDisplayed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isInProperties" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogLinkTypePropertyAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypePropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypePropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkTypePropertyGetResult" nillable="true" type="q39:LinkTypeProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkTypePropertyGetByNameResult" nillable="true" type="q40:LinkTypeProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="linkTypeProperty" nillable="true" type="q41:LinkTypeProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypePropertyUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogGetLinkTypeProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogGetLinkTypePropertiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogGetLinkTypePropertiesResult" nillable="true" type="q42:ArrayOfKeyValueOflongstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogAddLinkType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isFavorite" type="xs:boolean" />
+        <xs:element minOccurs="0" name="thickness" type="xs:float" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="linkStyle" type="q43:LinkStyles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogAddLinkTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogAddLinkTypeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isFavorite" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogLinkTypeAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeClone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="clonedTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeCloneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogLinkTypeCloneResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkTypeGetResult" nillable="true" type="q44:LinkType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkTypeGetByNameResult" nillable="true" type="q45:LinkType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkTypeGetId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkTypeGetIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LinkTypeGetIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="linkType" nillable="true" type="q46:LinkType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkTypeUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideAddListValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkPropertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="listValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideAddListValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogLinkOverrideAddListValueResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkPropertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="isOverride" type="xs:boolean" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="rule" type="q47:OverrideRules" />
+        <xs:element minOccurs="0" name="listValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="thickness" type="xs:float" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="linkStyle" type="q48:LinkStyles" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="startArrow" type="q49:ArrowStyles" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="endArrow" type="q50:ArrowStyles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogLinkOverrideAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="overrideId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="overrideId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkOverrideGetResult" nillable="true" type="q51:LinkOverride" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideGetByListValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="propertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideGetByListValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkOverrideGetByListValueResult" nillable="true" type="q52:LinkOverride" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="linkOverride" nillable="true" type="q53:LinkOverride" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverrideUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverridesGetByPropertyId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkPropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverridesGetByPropertyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogLinkOverridesGetByPropertyIdResult" nillable="true" type="q54:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverridesGetByTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkOverridesGetByTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogLinkOverridesGetByTypeIdResult" nillable="true" type="q55:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentId" type="xs:long" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isFavorite" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogLinkCategoryAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkCategoryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkCategoryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkCategoryGetResult" nillable="true" type="q56:LinkCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="linkCategoryName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogLinkCategoryGetByNameResult" nillable="true" type="q57:LinkCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="linkCategory" nillable="true" type="q58:LinkCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogLinkCategoryUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideAddListValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodePropertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="listValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideAddListValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogNodeOverrideAddListValueResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodePropertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="isOverride" type="xs:boolean" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="rule" type="q59:OverrideRules" />
+        <xs:element minOccurs="0" name="listValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogNodeOverrideAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="overrideId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="overrideId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeOverrideGetResult" nillable="true" type="q60:NodeOverride" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideGetByListValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="propertyId" type="xs:long" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideGetByListValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeOverrideGetByListValueResult" nillable="true" type="q61:NodeOverride" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="nodeOverride" nillable="true" type="q62:NodeOverride" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverrideUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverridesGetByPropertyId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodePropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverridesGetByPropertyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogNodeOverridesGetByPropertyIdResult" nillable="true" type="q63:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverridesGetByTypeId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeOverridesGetByTypeIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogNodeOverridesGetByTypeIdResult" nillable="true" type="q64:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="propertyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isMandatory" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isDisplayed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isInProperties" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogNodeTypePropertyAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogAddNodeTypeProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="propertyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="defaultValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isMandatory" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isDisplayed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isInProperties" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogAddNodeTypePropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogAddNodeTypePropertyResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypePropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypePropertyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeTypePropertyGetResult" nillable="true" type="q65:NodeTypeProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeTypePropertyGetByNameResult" nillable="true" type="q66:NodeTypeProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="nodeTypeProperty" nillable="true" type="q67:NodeTypeProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypePropertyUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogGetNodeTypeProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogGetNodeTypePropertiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CatalogGetNodeTypePropertiesResult" nillable="true" type="q68:ArrayOfKeyValueOflongstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vendorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogVendorAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vendorId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vendorId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogVendorGetResult" nillable="true" type="q69:Vendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vendorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogVendorGetByNameResult" nillable="true" type="q70:Vendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="vendor" nillable="true" type="q71:Vendor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogVendorUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="typeGroup" type="q72:NodeTypeGroups" />
+        <xs:element minOccurs="0" name="parentId" type="xs:long" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isFavorite" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogNodeCategoryAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeCategoryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeCategoryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeCategoryGetResult" nillable="true" type="q73:NodeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeCategoryName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="CatalogNodeCategoryGetByNameResult" nillable="true" type="q74:NodeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="nodeCategory" nillable="true" type="q75:NodeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeCategoryUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewNodeTypeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.microsoft.com/Message" name="ImageByteStream" type="q76:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DefaultHeight" type="xs:float" />
+  <xs:element name="DefaultWidth" type="xs:float" />
+  <xs:element name="ImageFileName" nillable="true" type="xs:string" />
+  <xs:element name="IsEnabled" type="xs:boolean" />
+  <xs:element name="IsFavourite" type="xs:boolean" />
+  <xs:element name="Name" nillable="true" type="xs:string" />
+  <xs:element name="TypeGroupNumber" type="xs:int" />
+  <xs:element name="CatalogNodeTypeAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/NetTerrain.WebApi" minOccurs="0" name="typeGroup" type="q77:NodeTypeGroups" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isFavorite" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogNodeTypeAddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeClone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nodeTypeId" type="xs:long" />
+        <xs:element minOccurs="0" name="clonedTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatalogNodeTypeCloneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatalogNodeTypeCloneResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

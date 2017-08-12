@@ -38,6 +38,7 @@ namespace BB_8
         Call_Report callReport;
         Call_DeviceMgmt callDeviceMgmt;
         Call_ControlPhone callControlPhone;
+        NetTerrain_Categories netTerrainCategories;
         public CallmanagerConnection callmanagerConnection;
         public bool connectedToCallmanager = false;
         public Settings settings;
@@ -46,7 +47,7 @@ namespace BB_8
         public BeeBeeAte()
         {
             InitializeComponent();
-            Network_Callmanager_DeviceMgmt_Treeview(null, null);
+            Documentation_NetTerrain_Categories_MouseDoubleClick(null, null);
         }
 
         private void Network_Callmanager_Analysis_Treeview(object sender, MouseButtonEventArgs e)
@@ -89,6 +90,19 @@ namespace BB_8
             callReport.Network_Callmanager_Report_Grid.Visibility = Visibility.Visible;
         }
 
+        private void Documentation_NetTerrain_Categories_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (netTerrainCategories == null)
+            {
+                netTerrainCategories = new NetTerrain_Categories(this);
+                netTerrainCategories.BB_8_NetTerrainCategories_InitGrid.Children.RemoveAt(0);
+                BB_8_MainGrid.Children.Add(netTerrainCategories.Documentation_NetTerrain_Categories_Grid);
+                netTerrainCategories.Documentation_NetTerrain_Categories_Grid.Margin =  new Thickness(210, 30, 10, 10);
+            }
+            SetAllVisible();
+            netTerrainCategories.Documentation_NetTerrain_Categories_Grid.Visibility = Visibility.Visible;
+        }
+
         private void InitCallmanagerConnection()
         {
             callmanagerConnection = new CallmanagerConnection();
@@ -125,9 +139,18 @@ namespace BB_8
             {
                 callControlPhone.Network_Callmanager_ControlPhone_Grid.Visibility = Visibility.Hidden;
             }
+            if(netTerrainCategories != null)
+            {
+                netTerrainCategories.Documentation_NetTerrain_Categories_Grid.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Network_Callmanager_ControlPhone_Treeview(object sender, MouseButtonEventArgs e)
+        {
+            Network_Callmanager_Show_ControlPhone("");
+        }
+
+        public void Network_Callmanager_Show_ControlPhone(String ipAdress)
         {
             if (callControlPhone == null)
             {
@@ -136,20 +159,27 @@ namespace BB_8
                 BB_8_MainGrid.Children.Add(callControlPhone.Network_Callmanager_ControlPhone_Grid);
                 callControlPhone.Network_Callmanager_ControlPhone_Grid.Margin = new Thickness(210, 30, 10, 10);
             }
+            if(ipAdress != "")
+            {
+                callControlPhone.Network_Callmanager_ControlPhone_IPPHone.Text = ipAdress;
+            }
             SetAllVisible();
             callControlPhone.Network_Callmanager_ControlPhone_Grid.Visibility = Visibility.Visible;
         }
 
         private void MainMenu_Tools_Properties_Click(object sender, RoutedEventArgs e)
         {
-            settings = new Settings();
-            settings.Show();
+            ShowSettings();
         }
 
         internal void ShowSettings()
         {
-            settings = new Settings();
-            settings.Show();
+            if(settings == null)
+            {
+                settings = new Settings();
+                settings.Show();
+            }
         }
+
     }
 }

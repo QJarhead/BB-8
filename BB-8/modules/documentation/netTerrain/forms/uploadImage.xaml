@@ -1,0 +1,22 @@
+﻿<Window x:Class="BB_8.uploadImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BB_8"
+        mc:Ignorable="d"
+        Title="Image Upload" Height="135.972" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="207*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Documentation_NetTerrain_uploadImage_Upload" Content="Upload" HorizontalAlignment="Left" Margin="97,75,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="Documentation_NetTerrain_uploadImage_Upload_Click"/>
+        <TextBox x:Name="Documentation_NetTerrain_uploadImage_Source" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <Label Content="Source:" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Height="26" Width="65" HorizontalContentAlignment="Right"/>
+        <Label Content="Destination:" HorizontalAlignment="Right" Margin="-12,36,10,0" VerticalAlignment="Top" Height="26" Width="87" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="Documentation_NetTerrain_uploadImage_Destination" HorizontalAlignment="Left" Height="23" Margin="10,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.Column="1"/>
+        <Button x:Name="Documentation_NetTerrain_uploadImage_Select" Content="..." Grid.Column="1" HorizontalAlignment="Left" Margin="145,13,0,0" VerticalAlignment="Top" Width="23" Height="23" Click="Documentation_NetTerrain_uploadImage_Select_Click"/>
+
+    </Grid>
+</Window>

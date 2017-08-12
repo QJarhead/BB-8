@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d1ebbd89-68bb-48cd-b2a3-35b04b87b3f8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f19f2fdd-19ef-4dc7-98b3-b307006f423a" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="3e1298db-b5fb-4b43-9b56-936b2464d1bf" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="NetTerrain.WebApi.xsd" MetadataType="Schema" ID="40a07cde-4f2d-42ea-be09-dd5004d7b3fa" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="System.IO.xsd" MetadataType="Schema" ID="a5430df6-80a7-4875-a9c4-f5888839c1ce" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="1b643cf5-c72a-4663-89df-29f48828ab41" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="NetTerrain.Models.xsd" MetadataType="Schema" ID="71f966d1-a6b0-4d32-95c9-54180841575d" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="Message.xsd" MetadataType="Schema" ID="66e94c90-9256-43f2-9d68-32ad3ba62bd8" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="f1c0d115-ece1-4e55-a516-d473ce3bad99" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="71fd1ca1-4842-41d9-8f5d-77d92e4f7ab6" SourceId="1" SourceUrl="http://10.1.1.18/vis/WebApi/NetTerrainWebApi.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

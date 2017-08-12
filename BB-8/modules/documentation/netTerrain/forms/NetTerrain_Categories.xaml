@@ -1,0 +1,60 @@
+﻿<Window x:Name="BB_8_NetTerrainCategories_InitWindow" x:Class="BB_8.NetTerrain_Categories"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BB_8"
+        mc:Ignorable="d"
+        Title="Window1" Height="488.35" Width="1222.964">
+    <Grid x:Name="BB_8_NetTerrainCategories_InitGrid" Margin="0,10" Grid.Row="1">
+        <Grid x:Name="Documentation_NetTerrain_Categories_Grid" Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" MaxHeight="150" MinHeight="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="Documentation_NetTerrain_Categories_Filter_Grid">
+                <Rectangle x:Name="Documentation_NetTerrain_Categories_Filter_Rectangle" Fill="#FFF4F4F5" Stroke="Black"/>
+                <Label Content="Filter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                <TextBox x:Name="Documentation_NetTerrain_Categories_Filter_Text" HorizontalAlignment="Left" Height="23" Margin="268,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" VerticalContentAlignment="Center" Text="Cisco WS-C294"/>
+                <Button x:Name="Documentation_NetTerrain_Categories_Filter_SearchIP" Content="Search Devices" HorizontalAlignment="Left" Margin="450,41,0,0" VerticalAlignment="Top" Height="23" Click="Documentation_NetTerrain_Categories_Filter_SearchIP_Click"/>
+                <ComboBox x:Name="Documentation_NetTerrain_Categories_Filter_Choice" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="128" Height="23" SelectedIndex="0">
+                    <ComboBoxItem Content="Name" HorizontalAlignment="Left" Width="175"/>
+                </ComboBox>
+                <ComboBox x:Name="Documentation_NetTerrain_Categories_Filter_State" HorizontalAlignment="Left" Margin="143,41,0,0" VerticalAlignment="Top" Width="120" Height="23" SelectedIndex="0">
+                    <ComboBoxItem Content="Enthält" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Beginnt" HorizontalAlignment="Left" Width="118"/>
+                    <ComboBoxItem Content="Endet" HorizontalAlignment="Left" Width="118"/>
+                </ComboBox>
+                <Label Content="netTerrain Manager" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <TextBox x:Name="Documentation_NetTerrain_Categories_Filter_Textbox" HorizontalAlignment="Left" Height="130" Margin="938,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="247"/>
+                <ComboBox x:Name="Documentation_NetTerrain_Categories_Filter_Categories" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="Documentation_NetTerrain_Categories_Filter_SetCategorie" Content="Set Categorie" HorizontalAlignment="Left" Margin="135,117,0,0" VerticalAlignment="Top" Height="23" Click="Documentation_NetTerrain_Categories_Filter_SetCategorie_Click" Width="80"/>
+                <Label Content="Kategorie:" HorizontalAlignment="Left" Margin="8,87,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Visual Override:" HorizontalAlignment="Left" Margin="268,87,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <ComboBox x:Name="Documentation_NetTerrain_Categories_Filter_VisualOverride" HorizontalAlignment="Left" Margin="372,118,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Documentation_NetTerrain_Categories_Filter_VisualOverride_SelectionChanged"/>
+                <Button x:Name="Documentation_NetTerrain_Categories_Filter_SetVisualOverride" Content="Set Override" HorizontalAlignment="Left" Margin="497,117,0,0" VerticalAlignment="Top" Height="23" Click="Documentation_NetTerrain_Categories_Filter_SetVisualOverride_Click" Width="80"/>
+                <Button x:Name="Documentation_NetTerrain_Categories_Filter_AddVisualOverride" Content="Add Override" HorizontalAlignment="Left" Margin="268,117,0,0" VerticalAlignment="Top" Height="23" Click="Documentation_NetTerrain_Categories_Filter_addCategorie_Click" Width="80"/>
+                <GridSplitter HorizontalAlignment="Left" Height="22" Margin="364,118,0,0" VerticalAlignment="Top" Width="3"/>
+                <Image x:Name="Documentation_NetTerrain_Categories_Filter_VisualOverride_Image" HorizontalAlignment="Left" Height="68" Margin="582,0,0,10" VerticalAlignment="Bottom" Width="279"/>
+            </Grid>
+            <DataGrid x:Name="Documentation_NetTerrain_Categories_DataGrid" Margin="0" Grid.Row="1" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <CheckBox Checked="Documentation_NetTerrain_Categories_DataGrid_Checkbox_Checked" Unchecked="Documentation_NetTerrain_Categories_DataGrid_Checkbox_Unchecked"></CheckBox>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding booleanFlag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Kategorie" Binding="{Binding Categorie}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </Grid>
+</Window>

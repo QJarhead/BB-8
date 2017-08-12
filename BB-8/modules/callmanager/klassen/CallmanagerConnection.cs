@@ -60,8 +60,8 @@ namespace BB_8
         /// <param name="e"></param>
         private void connectToCallmanager(object sender, DoWorkEventArgs e)
         {
-            var connectionInfo = new ConnectionInfo(Properties.Settings.Default.CallmanagerIPAddress, Properties.Settings.Default.CallmanagerUsername,
-                      new PasswordAuthenticationMethod(Properties.Settings.Default.CallmanagerUsername, Properties.Settings.Default.CallmanagerPassword),
+            var connectionInfo = new ConnectionInfo(Properties.Settings.Default.CallmanagerIPAddress, Properties.Settings.Default.CallmanagerOSUsername,
+                      new PasswordAuthenticationMethod(Properties.Settings.Default.CallmanagerOSUsername, Properties.Settings.Default.CallmanagerOSPassword),
                       new PrivateKeyAuthenticationMethod("rsa.key"));
             client = new SshClient(connectionInfo);
 

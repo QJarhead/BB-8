@@ -78,6 +78,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -96,6 +98,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\WebApiNetTerrain\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="modules\callmanager\klassen\CallmanagerConnection.cs" />
     <Compile Include="modules\callmanager\forms\Call_Analysis.xaml.cs">
       <DependentUpon>Call_Analysis.xaml</DependentUpon>
@@ -103,11 +110,35 @@
     <Compile Include="modules\callmanager\forms\Call_ControlPhone.xaml.cs">
       <DependentUpon>Call_ControlPhone.xaml</DependentUpon>
     </Compile>
+    <Compile Include="modules\documentation\netTerrain\forms\NetTerrain_addVisualOverride.xaml.cs">
+      <DependentUpon>NetTerrain_addVisualOverride.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modules\documentation\netTerrain\forms\NetTerrain_Categories.xaml.cs">
+      <DependentUpon>NetTerrain_Categories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modules\documentation\netTerrain\forms\uploadImage.xaml.cs">
+      <DependentUpon>uploadImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modules\documentation\netTerrain\klassen\DataGrid_Device_Entry_noCheckbox.cs" />
+    <Compile Include="modules\documentation\netTerrain\klassen\DataGrid_Device_Entry.cs" />
+    <Compile Include="modules\documentation\netTerrain\klassen\netTerrain_Api.cs" />
     <Compile Include="modules\main\forms\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="modules\callmanager\klassen\User.cs" />
     <Page Include="modules\callmanager\forms\Call_Analysis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modules\documentation\netTerrain\forms\NetTerrain_addVisualOverride.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modules\documentation\netTerrain\forms\NetTerrain_Categories.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="modules\documentation\netTerrain\forms\uploadImage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +202,106 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="BB-8_TemporaryKey.pfx" />
+    <None Include="Connected Services\WebApiNetTerrain\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.CatalogAddNodeTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.CatalogLinkCategoryUploadImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.CatalogNodeCategoryUploadImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.CatalogNodeOverrideUploadImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.CatalogNodeTypeUploadBackgroundResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.CatalogNodeTypeUploadImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Device.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Group.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.LinkCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.LinkOverride.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.LinkType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.LinkTypeProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Node.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.NodeCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.NodeOverride.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.NodeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.NodeTypeGroups.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.NodeTypeProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Port.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Rack.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.RackContainer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Slot.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.Vendor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\BB_8.WebApiNetTerrain.VisNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\Message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\NetTerrain.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\NetTerrain.WebApi.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\service.wsdl" />
+    <None Include="Connected Services\WebApiNetTerrain\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\System.IO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebApiNetTerrain\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -223,6 +354,23 @@
   <ItemGroup>
     <Resource Include="pictures\callmanager\Cisco7965.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WebApiNetTerrain\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebApiNetTerrain\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebApiNetTerrain\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebApiNetTerrain\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

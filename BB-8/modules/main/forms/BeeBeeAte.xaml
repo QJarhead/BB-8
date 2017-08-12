@@ -34,8 +34,14 @@
                         <TreeViewItem Header="Callmanager" HorizontalAlignment="Left" IsExpanded="True">
                             <TreeViewItem Header="Analyse" HorizontalAlignment="Left" AutomationProperties.Name="Network_Callmanager_Analyse_TreeViewItem" MouseDoubleClick="Network_Callmanager_Analysis_Treeview"/>
                             <TreeViewItem Header="Report" HorizontalAlignment="Left" AutomationProperties.Name="Network_Callmanager_Report_TreeViewItem" MouseDoubleClick="Network_Callmanager_Report_Treeview"/>
-                            <TreeViewItem Header="DeviceMgmt" HorizontalAlignment="Left" MouseDoubleClick="Network_Callmanager_DeviceMgmt_Treeview" IsExpanded="True"/>
+                            <TreeViewItem x:Name="Network_Callmanager_DeviceMgmt_Treeview_Item" Header="DeviceMgmt" HorizontalAlignment="Left" MouseDoubleClick="Network_Callmanager_DeviceMgmt_Treeview" IsExpanded="True"/>
                             <TreeViewItem Header="ControlPhone" MouseDoubleClick="Network_Callmanager_ControlPhone_Treeview"/>
+                        </TreeViewItem>
+                    </TreeViewItem>
+                    <TreeViewItem Header="Dokumentation" IsExpanded="True" HorizontalAlignment="Right">
+                        <TreeViewItem Header="netTerrain" HorizontalAlignment="Left" Width="157" IsExpanded="True">
+                            <TreeViewItem x:Name="Documentation_NetTerrain_Categories" Header="Categories" HorizontalAlignment="Left" Width="138" MouseDoubleClick="Documentation_NetTerrain_Categories_MouseDoubleClick"/>
+                            <TreeViewItem x:Name="Documentation_NetTerrain_VisualOverrides" Header="Visual Overrides" HorizontalAlignment="Left" Width="138"/>
                         </TreeViewItem>
                     </TreeViewItem>
                 </TreeView>

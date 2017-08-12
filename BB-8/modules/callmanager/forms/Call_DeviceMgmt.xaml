@@ -27,6 +27,7 @@
                     <ComboBoxItem Content="Beginnt" HorizontalAlignment="Left" Width="118"/>
                     <ComboBoxItem Content="Endet" HorizontalAlignment="Left" Width="118"/>
                 </ComboBox>
+                <Label Content="Callmanager Control-Phone" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" FontSize="20" HorizontalContentAlignment="Center"/>
             </Grid>
             <WebBrowser x:Name="Network_Callmanager_DeviceMgmt_Filter_ShowScreen" Height="275" Margin="0,11,1,0" Width="425" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" LoadCompleted="Network_Callmanager_DeviceMgmt_Filter_ShowScreen_LoadCompleted"/>
             <Button x:Name="Network_Callmanager_DeviceMgmt_Filter_ShowScreen_Close" Content="X" HorizontalAlignment="Right" Margin="0,11,426,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Click="Network_Callmanager_DeviceMgmt_Filter_ShowScreen_Close_Click"/>
@@ -34,7 +35,7 @@
                 <DataGrid.ContextMenu>
                     <ContextMenu Name="cm" StaysOpen="true">
                         <MenuItem x:Name="Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ShowScreenshot" Header="Show Screenshot" Click="Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ShowScreenshot_Click"/>
-                        <MenuItem Header="Login User"/>
+                        <MenuItem x:Name="Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ControlPhone" Header="Control Phone" Click="Network_Callmanager_DeviceMgmt_Output_Data_ContextMenu_ControlPhone_Click"/>
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>

@@ -28,6 +28,7 @@ namespace BB_8
     ///     Tim Christoph Lid       02.07.2017      Erstellt
     ///     Tim Christoph Lid       06.07.2017      Hinzufügen der Buttons des Keypads
     ///     Tim Christoph Lid       09.07.2017      Kommentare
+    ///     Tim Christoph Lid       28.07.2017      Screenshot vom Telefon angepasst, jetzt wird er korrekt angezeigt
     /// 
     public partial class Call_ControlPhone : Window
     {
@@ -48,58 +49,59 @@ namespace BB_8
         private void Network_Callmanager_ControlPhone_Phone_ButtonField(object sender, RoutedEventArgs e)
         {
             string content = (sender as Button).Name.ToString();
-            String button = "";
             switch (content)
             {
                 case "Network_Callmanager_ControlPhone_Phone_Button_1":
-                    button = "1";
                     PressKeyPad(1);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_2":
-                    button = "2";
                     PressKeyPad(2);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_3":
-                    button = "3";
                     PressKeyPad(3);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_4":
-                    button = "4";
                     PressKeyPad(4);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_5":
-                    button = "5";
                     PressKeyPad(5);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_6":
-                    button = "6";
                     PressKeyPad(6);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_7":
-                    button = "7";
                     PressKeyPad(7);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_8":
-                    button = "8";
                     PressKeyPad(8);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_9":
-                    button = "9";
                     PressKeyPad(9);
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_10":
-                    button = "*";
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_11":
-                    button = "0";
                     break;
                 case "Network_Callmanager_ControlPhone_Phone_Button_12":
-                    button = "#";
+                    break;
+                case "Network_Callmanager_ControlPhone_Phone_Button_Soft_1":
+                    PressSoftKey(1);
+                    break;
+                case "Network_Callmanager_ControlPhone_Phone_Button_Soft_2":
+                    PressSoftKey(2);
+                    break;
+                case "Network_Callmanager_ControlPhone_Phone_Button_Soft_3":
+                    PressSoftKey(3);
+                    break;
+                case "Network_Callmanager_ControlPhone_Phone_Button_Soft_4":
+                    PressSoftKey(4);
+                    break;
+                case "Network_Callmanager_ControlPhone_Phone_Button_Soft_5":
+                    PressSoftKey(5);
                     break;
                 default:
                     break;
             }
-            TestTextbox.AppendText(button);
         }
 
         /// <summary>
@@ -113,12 +115,30 @@ namespace BB_8
         }
 
         /// <summary>
-        /// Die 9 bisherigen KeyPad-Buttons werden gedrückt
+        /// Press Keypad on Cisco Phone
         /// </summary>
         /// <param name="item"></param>
         public void PressKeyPad(int item)
         {
             Execute("<CiscoIPPhoneExecute><ExecuteItem URL = 'Key:KeyPad" + item + "'/></CiscoIPPhoneExecute>");
+        }
+
+        /// <summary>
+        /// Press Softkey on Cisco Phone
+        /// </summary>
+        /// <param name="item"></param>
+        public void PressSoftKey(int item)
+        {
+            Execute("<CiscoIPPhoneExecute><ExecuteItem URL = 'Key:Soft" + item + "'/></CiscoIPPhoneExecute>");
+        }
+
+        /// <summary>
+        /// Press Line on Cisco Phone
+        /// </summary>
+        /// <param name="item"></param>
+        public void PressLine(int item)
+        {
+            Execute("<CiscoIPPhoneExecute><ExecuteItem URL = 'Key:Line" + item + "'/></CiscoIPPhoneExecute>");
         }
 
         /// <summary>
@@ -154,7 +174,7 @@ namespace BB_8
                 responseString = reader.ReadToEnd();
             }
             TestTextbox.Text = responseString;
-            ShowScreenshot("10.14.50.80");
+            ShowScreenshot(Network_Callmanager_ControlPhone_IPPHone.Text);
         }
 
         /// <summary>
@@ -173,8 +193,9 @@ namespace BB_8
         /// <param name="ipAdress"></param>
         private void ShowScreenshot(String ipAdress)
         {
-            string authHdr = "Authorization: Basic " + Convert.ToBase64String(Encoding.ASCII.GetBytes("BB-8:mSMHaEfyI6PGYG0XCltD")) + "\r\n";
+            string authHdr = "Authorization: Basic " + Convert.ToBase64String(Encoding.ASCII.GetBytes("" + Properties.Settings.Default.IPPhoneUsername + ":" + Properties.Settings.Default.IPPhonePassword)) + "\r\n";
             Network_Callmanager_ControlPhone_Screen.Navigate("http://" + ipAdress + "/CGI/Screenshot", null, null, authHdr);
+            TestTextbox.Text = "http://" + ipAdress + "/CGI/Screenshot";
         }
 
         /// <summary>

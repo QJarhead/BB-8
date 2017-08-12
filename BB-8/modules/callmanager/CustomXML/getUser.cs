@@ -57,7 +57,7 @@ namespace BB_8
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(string.Format(@"https://194.76.158.16:8443/axl/"));
             request.Method = "POST";
             request.PreAuthenticate = true;
-            request.Credentials = new NetworkCredential(BB_8.Properties.Settings.Default.CallmanagerUsername, BB_8.Properties.Settings.Default.CallmanagerPassword);
+            request.Credentials = new NetworkCredential(BB_8.Properties.Settings.Default.CallmanagerUCUsername, BB_8.Properties.Settings.Default.CallmanagerUCPassword);
             request.ContentType = "text/xml; charset=utf-8";
             request.Accept = "text/xml";
             request.Headers.Add("SOAPAction: CUCM:DB ver=11.0");
@@ -65,7 +65,7 @@ namespace BB_8
             Assembly _assembly;
             StreamReader _textStreamReader;
             _assembly = Assembly.GetExecutingAssembly();
-            _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("BB_8.CustomXML.getUser.xml"));
+            _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("BB_8.modules.callmanager.CustomXML.getUser.xml"));
             String soap = _textStreamReader.ReadToEnd().ToString();
             soap = soap.Replace("BB8_UserId", userID);
             soap = soap.Replace("BB8_lastName", lastName);

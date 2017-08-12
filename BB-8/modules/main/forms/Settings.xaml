@@ -14,24 +14,44 @@
             <TreeViewItem x:Name="Properties_Callmanager_TreeView" Header="Callmanager" Selected="Properties_Callmanager_TreeView_Selected"/>
             <TreeViewItem x:Name="Properties_IPPhone_TreeView" Header="IPPhones" Selected="Properties_IPPhone_TreeView_Selected"/>
             <TreeViewItem x:Name="Properties_Layout_TreeView" Header="Layout" Selected="Properties_Layout_TreeView_Selected"/>
+            <TreeViewItem x:Name="Properties_netTerrain_TreeView" Header="Layout" Selected="Properties_netTerrain_TreeView_Selected"/>
         </TreeView>
-        <Grid x:Name="Properties_Callmanager_Grid" Margin="121,10,10,35">
+        <Grid x:Name="Properties_Callmanager_Grid" Margin="121,10,10,35" Visibility="Hidden">
             <Label Content="Callmanager Einstellungen:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label Content="IP-Adresse:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Width="70"/>
-            <TextBox x:Name="Properties_Callmanager_IPAddress" HorizontalAlignment="Left" Height="23" Margin="84,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Username:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="70" HorizontalContentAlignment="Right"/>
-            <TextBox x:Name="Properties_Callmanager_Username" HorizontalAlignment="Left" Height="23" Margin="84,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Passwort:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="70" HorizontalContentAlignment="Right"/>
-            <PasswordBox x:Name="Properties_Callmanager_Password" HorizontalAlignment="Left" Margin="84,96,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
-            <CheckBox x:Name="Properties_Callmanager_Autoconnect" Content="Autoconnect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,124,0,0"/>
+            <Label Content="IP-Adresse:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Width="80"/>
+            <TextBox x:Name="Properties_Callmanager_IPAddress" HorizontalAlignment="Left" Height="23" Margin="95,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="OSUsername:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="Properties_Callmanager_OSUsername" HorizontalAlignment="Left" Height="23" Margin="95,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Passwort:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right"/>
+            <PasswordBox x:Name="Properties_Callmanager_OSPassword" HorizontalAlignment="Left" Margin="95,96,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+            <CheckBox x:Name="Properties_Callmanager_Autoconnect" Content="Autoconnect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,186,0,0"/>
+            <Label Content="UCUsername:" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="Properties_Callmanager_UCUsername" HorizontalAlignment="Left" Height="23" Margin="95,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="UC Passwort:" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right"/>
+            <PasswordBox x:Name="Properties_Callmanager_UCPassword" HorizontalAlignment="Left" Margin="95,158,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        </Grid>
+        <Grid x:Name="Properties_netTerrain_Grid" Margin="121,10,10,35" Visibility="Visible">
+            <Label Content="netTerrain Database Einstellungen:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="DB Source:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Width="120"/>
+            <TextBox x:Name="Properties_netTerrain_DBSource" HorizontalAlignment="Left" Height="23" Margin="135,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="DB Name:" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="Properties_netTerrain_DBName" HorizontalAlignment="Left" Height="23" Margin="135,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="DB User:" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="Properties_netTerrain_DBUsername" HorizontalAlignment="Left" Height="23" Margin="135,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="DB Passwort:" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+            <PasswordBox x:Name="Properties_netTerrain_DBPassword" HorizontalAlignment="Left" Margin="135,189,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+            <Label Content="netTerrain User:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+            <Label Content="netTerrain Passwort:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+            <PasswordBox x:Name="Properties_netTerrain_Password" HorizontalAlignment="Left" Margin="135,65,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+            <TextBox x:Name="Properties_netTerrain_Username" HorizontalAlignment="Left" Height="23" Margin="135,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </Grid>
         <Button x:Name="Properties_Submit" Content="Übernehmen" HorizontalAlignment="Left" Margin="339,260,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.773,0.093" Click="Properties_Submit_Click"/>
         <Grid x:Name="Properties_IPPhones_Grid" Margin="121,10,10,35" Visibility="Hidden">
             <Label Content="IPPhone Einstellungen:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label Content="Username:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="70" HorizontalContentAlignment="Right"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="Properties_IPPhone_Username" HorizontalAlignment="Left" Height="23" Margin="85,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label Content="Passwort:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="70" HorizontalContentAlignment="Right"/>
-            <PasswordBox HorizontalAlignment="Left" Margin="84,65,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+            <PasswordBox x:Name="Properties_IPPhone_Password" HorizontalAlignment="Left" Margin="84,65,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
         </Grid>
         <Grid x:Name="Properties_Layout_Grid" Margin="121,10,10,35" Visibility="Hidden">
             <Label Content="Layout Einstellungen:" HorizontalAlignment="Left" VerticalAlignment="Top"/>

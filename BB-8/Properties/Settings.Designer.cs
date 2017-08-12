@@ -38,24 +38,24 @@ namespace BB_8.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CallmanagerUsername {
+        public string CallmanagerOSUsername {
             get {
-                return ((string)(this["CallmanagerUsername"]));
+                return ((string)(this["CallmanagerOSUsername"]));
             }
             set {
-                this["CallmanagerUsername"] = value;
+                this["CallmanagerOSUsername"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CallmanagerPassword {
+        public string CallmanagerOSPassword {
             get {
-                return ((string)(this["CallmanagerPassword"]));
+                return ((string)(this["CallmanagerOSPassword"]));
             }
             set {
-                this["CallmanagerPassword"] = value;
+                this["CallmanagerOSPassword"] = value;
             }
         }
         
@@ -80,6 +80,102 @@ namespace BB_8.Properties {
             }
             set {
                 this["IPPhonePassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CallmanagerUCUsername {
+            get {
+                return ((string)(this["CallmanagerUCUsername"]));
+            }
+            set {
+                this["CallmanagerUCUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CallmanagerUCPassword {
+            get {
+                return ((string)(this["CallmanagerUCPassword"]));
+            }
+            set {
+                this["CallmanagerUCPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string netTerrainDatabaseIPAddress {
+            get {
+                return ((string)(this["netTerrainDatabaseIPAddress"]));
+            }
+            set {
+                this["netTerrainDatabaseIPAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string netTerrainDatabaseName {
+            get {
+                return ((string)(this["netTerrainDatabaseName"]));
+            }
+            set {
+                this["netTerrainDatabaseName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string netTerrainDatabaseUser {
+            get {
+                return ((string)(this["netTerrainDatabaseUser"]));
+            }
+            set {
+                this["netTerrainDatabaseUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string netTerrainDatabasePassword {
+            get {
+                return ((string)(this["netTerrainDatabasePassword"]));
+            }
+            set {
+                this["netTerrainDatabasePassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string netTerrainUsername {
+            get {
+                return ((string)(this["netTerrainUsername"]));
+            }
+            set {
+                this["netTerrainUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string netTerrainPassword {
+            get {
+                return ((string)(this["netTerrainPassword"]));
+            }
+            set {
+                this["netTerrainPassword"] = value;
             }
         }
     }

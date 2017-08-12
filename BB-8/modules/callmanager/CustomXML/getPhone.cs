@@ -46,7 +46,7 @@ namespace BB_8
             XmlDocument xmlDocument = new XmlDocument();
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(string.Format(@"https://cucm01.voice.flexx.local:8443/realtimeservice2/services/RISService70?wsdl/"));
             request.Method = "POST";
-            request.Credentials = new NetworkCredential(BB_8.Properties.Settings.Default.CallmanagerUsername, BB_8.Properties.Settings.Default.CallmanagerPassword);
+            request.Credentials = new NetworkCredential(BB_8.Properties.Settings.Default.CallmanagerUCUsername, BB_8.Properties.Settings.Default.CallmanagerUCPassword);
             request.ContentType = "text/xml; charset=utf-8";
             request.Accept = "text/xml";
             request.Headers.Add("SOAPAction: CUCM:DB ver=11.0");
@@ -54,7 +54,7 @@ namespace BB_8
             Assembly _assembly;
             StreamReader _textStreamReader;
             _assembly = Assembly.GetExecutingAssembly();
-            _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("BB_8.CustomXML.getPhone.xml"));
+            _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("BB_8.modules.callmanager.CustomXML.getPhone.xml"));
             String soap = _textStreamReader.ReadToEnd().ToString();
             soap = soap.Replace("BB8_DirectoryNumber", directoryNumber);
 
